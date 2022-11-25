@@ -1,0 +1,32 @@
+/** @format */
+
+/////////////////// MIXINS
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/////////////////// VARIABLES
+// SIZES
+$icon-max-width: 30px;
+$icon-min-width: 30px;
+$icon-max-height: 30px;
+
+$list-item-padding-horizontal: 16px;
+$list-item-padding-vertical: 10px;
+
+$sidebar-padding: 20px 0;
+$sidebar-max-width: $icon-max-width + ($list-item-padding-horizontal * 2);
+$sidebar-max-width-on-hover: 180px;
+
+$icon-container-height: $list-item-padding-vertical * 2 + $icon-max-height;
+$icon-container-width: $sidebar-max-width;
+
+$menu-position-left: $sidebar-max-width + 20px;
+
+// COLORS
+$icon-and-menu-item-color: #fff;
+$sidebar-background-color: darkslategray;
+
+// FONTS
+$font-roboto: "Roboto", sans-serif;
