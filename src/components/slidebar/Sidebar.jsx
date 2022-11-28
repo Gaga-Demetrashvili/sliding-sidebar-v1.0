@@ -1,5 +1,3 @@
-/** @format */
-
 import "./sidebar.styles.scss";
 import Sprite from "../../assets/images/sprite.svg";
 
