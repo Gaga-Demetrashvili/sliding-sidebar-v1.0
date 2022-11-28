@@ -1,5 +1,10 @@
 /** @format */
+
 @import "./variables";
+
+body {
+  background-color: #545151;
+}
 
 .sidebar {
   @include flex-column;
@@ -23,6 +28,8 @@
   opacity: 1;
   transform: translate(0, -50%);
   left: $menu-position-left;
+  // animation: opacityController 1s;
+  // animation-fill-mode: forwards;
 }
 
 .list {
@@ -31,6 +38,15 @@
 
 .list__item {
   position: relative;
+  transition: all 1s;
+
+  &:hover {
+    background-image: linear-gradient(
+      to right,
+      $list-item-gradient-color--1,
+      $list-item-gradient-color--2
+    );
+  }
 
   &:hover .icon {
     fill: $icon-and-menu-item-color;
@@ -39,6 +55,53 @@
   &:hover .menu__item {
     color: $icon-and-menu-item-color;
   }
+
+  &:hover .icon-container {
+    background-color: transparent;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.list__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgba($white, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 2s;
+  z-index: 1100;
+}
+
+.list__item:hover::before {
+  transform: translateX(0);
+}
+
+.list__item::after {
+  content: "";
+  position: relative;
+  display: block;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    $list-item-bottom-line-color,
+    $white 95%
+  );
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  transition: all 2s;
+  width: 0;
+  z-index: 50;
 }
 
 .icon-container {
@@ -47,6 +110,9 @@
   position: relative;
   background-color: $sidebar-background-color;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon {
@@ -54,10 +120,6 @@
   max-width: $icon-max-width;
   max-height: $icon-max-height;
   min-width: $icon-min-width;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   fill: rgb($icon-and-menu-item-color, 0.6);
 }
 
@@ -73,4 +135,100 @@
 
 .menu__item {
   color: rgb($icon-and-menu-item-color, 0.6);
+}
+
+.top {
+  .list__item {
+    .icon {
+      animation: horizontalRotationReverse 1s;
+    }
+  }
+}
+
+.top {
+  .list__item:hover {
+    .icon {
+      animation: horizontalRotation 1s;
+    }
+  }
+}
+
+.bottom {
+  .list__item:first-child:hover {
+    .icon {
+      animation: horizontalRotation 1s;
+    }
+  }
+  .list__item:last-child:hover {
+    .icon {
+      animation: sideRotation 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.bottom {
+  .list__item:first-child {
+    .icon {
+      animation: horizontalRotationReverse 1s;
+    }
+  }
+  .list__item:last-child {
+    .icon {
+      animation: sideRotationReverse 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes sideRotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes sideRotationReverse {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes horizontalRotation {
+  from {
+    transform: rotateY(0);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes horizontalRotationReverse {
+  from {
+    transform: rotateY(360deg);
+  }
+
+  to {
+    transform: rotateY(0);
+  }
+}
+
+@keyframes opacityController {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }

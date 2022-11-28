@@ -1,11 +1,12 @@
 /** @format */
+
 import "./sidebar.styles.scss";
 import Sprite from "../../assets/images/sprite.svg";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <ul className="list">
+      <ul className="list top">
         <li className="list__item">
           <div className="icon-container">
             <svg className="icon">
@@ -67,7 +68,7 @@ const Sidebar = () => {
           </div>
         </li>
       </ul>
-      <ul className="list">
+      <ul className="list bottom">
         <li className="list__item">
           <div className="icon-container">
             <svg className="icon">
