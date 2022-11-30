@@ -19,9 +19,9 @@ const Sidebar = () => {
             </div>
           </div>
           <div className="list__item__children__container">
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
+            <a href="#">Lorem Ipsum</a>
+            <a href="#">Lorem Ipsum</a>
+            <a href="#">Lorem Ipsum</a>
           </div>
         </li>
         <li className="list__item">
@@ -36,9 +36,8 @@ const Sidebar = () => {
             </div>
           </div>
           <div className="list__item__children__container">
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
+            <a href="#">Lorem Ipsum</a>
+            <a href="#">Lorem Ipsum</a>
           </div>
         </li>
         <li className="list__item">
@@ -53,9 +52,9 @@ const Sidebar = () => {
             </div>
           </div>
           <div className="list__item__children__container">
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
+            <a href="#">Lorem Ipsum</a>
+            <a href="#">Lorem Ipsum</a>
+            <a href="#">Lorem Ipsum</a>
           </div>
         </li>
         <li className="list__item">
@@ -70,9 +69,8 @@ const Sidebar = () => {
             </div>
           </div>
           <div className="list__item__children__container">
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
+            <a href="#">Lorem Ipsum</a>
+            <a href="#">Lorem Ipsum</a>
           </div>
         </li>
         <li className="list__item">
@@ -87,9 +85,9 @@ const Sidebar = () => {
             </div>
           </div>
           <div className="list__item__children__container">
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
+            <a href="#">Lorem Ipsum</a>
+            <a href="#">Lorem Ipsum</a>
+            <a href="#">Lorem Ipsum</a>
           </div>
         </li>
         <li className="list__item">
@@ -104,9 +102,7 @@ const Sidebar = () => {
             </div>
           </div>
           <div className="list__item__children__container">
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
-            <a href="#">list item footer - content</a>
+            <a href="#">Lorem Ipsum</a>
           </div>
         </li>
       </ul>
@@ -122,6 +118,36 @@ const Sidebar = () => {
               <p className="menu__item">profile</p>
             </div>
           </div>
+          <div className="list__item__menu__container">
+            <a href="#">
+              <p>Lorem Ipsum</p>
+              <div className="animation__container">
+                <div className="animation__container--1"></div>
+                <div className="animation__container--2"></div>
+              </div>
+            </a>
+            <a href="#">
+              <p>Lorem Ipsum</p>
+              <div className="animation__container">
+                <div className="animation__container--1"></div>
+                <div className="animation__container--2"></div>
+              </div>
+            </a>
+            <a href="#">
+              <p>Lorem Ipsum</p>
+              <div className="animation__container">
+                <div className="animation__container--1"></div>
+                <div className="animation__container--2"></div>
+              </div>
+            </a>
+            <a href="#">
+              <p>Lorem Ipsum</p>
+              <div className="animation__container">
+                <div className="animation__container--1"></div>
+                <div className="animation__container--2"></div>
+              </div>
+            </a>
+          </div>
         </li>
         <li className="list__item">
           <div className="list__item__header">
@@ -133,6 +159,36 @@ const Sidebar = () => {
             <div className="menu">
               <p className="menu__item">settings</p>
             </div>
+          </div>
+          <div className="list__item__menu__container">
+            <a href="#">
+              <p>Lorem Ipsum</p>
+              <div className="animation__container">
+                <div className="animation__container--1"></div>
+                <div className="animation__container--2"></div>
+              </div>
+            </a>
+            <a href="#">
+              <p>Lorem Ipsum</p>
+              <div className="animation__container">
+                <div className="animation__container--1"></div>
+                <div className="animation__container--2"></div>
+              </div>
+            </a>
+            <a href="#">
+              <p>Lorem Ipsum</p>
+              <div className="animation__container">
+                <div className="animation__container--1"></div>
+                <div className="animation__container--2"></div>
+              </div>
+            </a>
+            <a href="#">
+              <p>Lorem Ipsum</p>
+              <div className="animation__container">
+                <div className="animation__container--1"></div>
+                <div className="animation__container--2"></div>
+              </div>
+            </a>
           </div>
         </li>
       </ul>

@@ -2,13 +2,9 @@
 
 @import "./variables";
 
-body {
-  background-color: #545151;
-}
-
 .sidebar {
   @include flex-column;
-  height: calc(100% - 30px);
+  height: calc(100vh - 30px);
   background-color: $sidebar-background-color;
   // max-width: $sidebar-max-width;
   max-width: $sidebar-max-width-on-hover;
@@ -35,6 +31,10 @@ body {
 
 .list {
   list-style: none;
+}
+
+.list___item {
+  position: relative;
 }
 
 .list__item:hover {
@@ -71,6 +71,10 @@ body {
     a:visited {
       display: block;
     }
+  }
+
+  .list__item__menu__container {
+    visibility: visible;
   }
 }
 
@@ -203,6 +207,95 @@ body {
   color: rgb($icon-and-menu-item-color, 0.6);
 }
 
+.list__item__menu__container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(82, 109, 109);
+  position: fixed;
+  z-index: 999;
+  left: $sidebar-max-width-on-hover;
+  width: calc(100% - $sidebar-max-width-on-hover);
+  min-height: calc(100vh);
+  top: 30px;
+  // transform: translate(-50%, -50%);
+  justify-content: space-evenly;
+  align-items: center;
+
+  visibility: hidden;
+
+  a:link,
+  a:visited {
+    color: $white-06;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    gap: 10px;
+
+    &:last-child {
+      padding-bottom: 10px;
+    }
+
+    .animation__container {
+      width: 100%;
+      height: 8px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &--1 {
+        width: 100%;
+        height: 0.2px;
+        max-height: 0.5px;
+        background-color: $white-01;
+        border-radius: 100px;
+        transform: scale(0);
+        transition: all 1s 0.5s;
+      }
+
+      &--2 {
+        width: 8px;
+        height: 8px;
+        background-color: $white-06;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        transition: all 1.4s;
+      }
+    }
+  }
+
+  a:hover,
+  a:active {
+    color: $white;
+
+    .animation__container {
+      &--1 {
+        background-color: $white-06;
+        transform: scale(1);
+
+        box-shadow: 0px 0px 4px 0.1px rgba($white, 0.5);
+      }
+
+      &--2 {
+        background-color: $white;
+        border-radius: 50%;
+        transform: rotate(0) translateX(-50%);
+
+        box-shadow: 0px 0px 8px 0.2px rgba($white, 0.5);
+      }
+    }
+  }
+}
+
+.list__item__menu__container {
+}
+
 .top {
   .list__item {
     .icon {
@@ -244,6 +337,18 @@ body {
       animation: sideRotationReverse 1s;
       animation-fill-mode: forwards;
     }
+  }
+}
+
+@keyframes listAnim {
+  0% {
+    border-radius: 50%;
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    width: 100%;
   }
 }
 
